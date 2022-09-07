@@ -24,7 +24,7 @@ const Users = ({users}) => {
         {
             data ? data.users.data.map((user) => (
 
-                <div className=' w-1/5 m-h-96 px-6 py-9 mx-6 my-6 bg-card rounded'>
+                <div className='2xl:w-1/5 md:w-1/3 sm:w-full m-h-96 px-6 py-9 mx-6 my-6 bg-card rounded'>
                         <div className='flex justify-center'>
                             <Image className=' rounded-full' src={user.avatar_url} width={130} height={130}/>
                         </div>
