@@ -2,13 +2,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 import useSWR from 'swr'
 
-async function fetcher(...arg) {
+export async function fetcher(...arg) {
     const res = await fetch(...arg);
     
     return res.json();
   }
 
-const Users = ({users}) => {
+
+export const Users = ({users}) => {
 
     const { data } = useSWR("/api/github", fetcher);
     console.log(data)
@@ -38,7 +39,7 @@ const Users = ({users}) => {
                             <p className='my-1'>Friends: </p>
                         </div>
                         <div className='flex justify-center'>
-                        <Link href={'/users/' + user.id} key={user.id}><a className="bg-button rounded px-8 py-3 ">More</a></Link>
+                            <Link href={'/users/' + user.id} key={user.id}><a className="bg-button rounded px-8 py-3 ">More</a></Link>
                         </div>
                     </div>
             )):null
